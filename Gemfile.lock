@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    blankslate (3.1.2)
+    ffi (1.9.0)
+    rubypython (0.6.3)
+      blankslate (>= 2.1.2.3)
+      ffi (>= 1.0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rubypython
