@@ -1,8 +1,11 @@
 require "rubypython"
 
-RubyPython.start # start the Python interpreter
+# You'll have to change this to whereever your python installation with the haiku package is
+RubyPython.start_from_virtualenv("/usr/ENV")
 
-cPickle = RubyPython.import("cPickle")
-p cPickle.dumps("Testing RubyPython.").rubify
+sys = RubyPython.import("sys")
+p sys.path
+
+haikus = RubyPython.import("haikus")
 
 RubyPython.stop # stop the Python interpreter
