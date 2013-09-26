@@ -1,7 +1,11 @@
 require 'lingua'
 
-haiku = "one one one one one, one one one one one one one, one one one one one"
+if (ARGV.length != 1)
+  raise "Usage: haiku_holla.rb [text]"
+end
 
-@text = Lingua::EN::Readability.new(haiku)
+@text = Lingua::EN::Readability.new(ARGV[0])
 
-puts @text.num_syllables
+print 'There are '
+print @text.num_syllables
+puts ' syllables in the supplied input.'
