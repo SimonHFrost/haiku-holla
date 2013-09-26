@@ -8,23 +8,20 @@ end
 @report = Lingua::EN::Readability.new(ARGV[0])
 @syllables = @report.num_syllables
 
-print 'There are '
-print @syllables
-puts ' syllables in the supplied input.'
-
 if (@syllables != 17)
-  abort("This isn't the correct number of syllables for a haiku.")
+  false
 end
 
-@words = ARGV[0].split(" ")
 @syllabelCountMatch = Set.new [5, 12, 17]
+@words = ARGV[0].split(" ")
+
 @totalSyllabels = 0
 @syllabelSet = Set.new
+
 @words.each do |item|
   @report = Lingua::EN::Readability.new(item)
   @totalSyllabels += @report.num_syllables
   @syllabelSet.add(@totalSyllabels)
 end
 
-print 'Haiku: '
-puts @syllabelCountMatch.subset? @syllabelSet
+@syllabelCountMatch.subset? @syllabelSet
