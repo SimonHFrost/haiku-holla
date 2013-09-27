@@ -12,7 +12,7 @@ if (@syllables != 17)
   false
 end
 
-@syllabelCountMatch = Set.new [5, 12, 17]
+@syllabelCountMatch = Set.new [5, 12]
 @words = ARGV[0].split(" ")
 
 @totalSyllabels = 0
